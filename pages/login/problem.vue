@@ -16,7 +16,7 @@ export default {
 	data() {
 		return {
 			appUrl: false,
-			url: "https://sourcebyte.cn",
+			url: "http://127.0.0.1",
 			itemList: [
 				{
 					head: "初始密码是什么？",

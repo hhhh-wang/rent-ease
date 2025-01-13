@@ -97,8 +97,8 @@ export default {
 	data() {
 		return {
 			form: {
-				phone: '',
-				password: ''
+				phone: '18588966676',
+				password: '123456'
 			}
 		}
 	},

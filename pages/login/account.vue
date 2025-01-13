@@ -59,7 +59,7 @@ export default {
 			})
 		},
 		server(){
-			window.open ('https://sourcebyte.cn')
+			window.open ('http://127.0.0.1')
 		}
 	}
 };

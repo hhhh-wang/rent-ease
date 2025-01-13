@@ -75,13 +75,13 @@
     <u-loadmore bg-color="rgb(240, 240, 240)" :status="loadStatus" @loadmore="findHouseList"></u-loadmore>
     <u-back-top :scroll-top="scrollTop" top="1000"></u-back-top>
     <u-no-network></u-no-network>
-    <view class="buttom">
-      <view class="loginType">
-        <view class="wechat item">
-          <view class="icon">
-            <u-icon size="60" name="server-man" color="#999" @click="server"></u-icon>
-          </view>
-        </view>
+    <view class="float-button">
+      <view class="button-wrapper" @click="server">
+        <u-icon 
+          name="server-man" 
+          size="44" 
+          color="#2979ff"
+        ></u-icon>
       </view>
     </view>
     <u-toast ref="uToast"></u-toast>
@@ -379,7 +379,24 @@ export default {
       });
     },
     server() {
-      window.open('https://sourcebyte.cn');
+      uni.showModal({
+        title: '联系客服',
+        content: '是否拨打客服电话：18588966676？',
+        success: (res) => {
+          if (res.confirm) {
+            uni.makePhoneCall({
+              phoneNumber: '18588966676',
+              fail: (err) => {
+                this.$refs.uToast.show({
+                  type: 'warning',
+                  title: '拨打电话失败，请稍后重试',
+                  duration: 2000
+                });
+              }
+            });
+          }
+        }
+      });
     },
     handleFeatureClick(type) {
       // 开发中的功能列表
@@ -520,22 +537,27 @@ export default {
   margin-top: 3px;
 }
 
-.buttom {
-  .loginType {
-    font-size: 14px;
-    position: fixed;
-    right: 30rpx;
-    bottom: 300rpx;
-    width: 60px;
-    height: 60px;
-    padding: 4px;
-    cursor: pointer;
-    background: #FFF;
-    text-align: center;
-    line-height: 60px;
-    border-radius: 100%;
-    -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.1), inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.1), inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1);
+.float-button {
+  position: fixed;
+  right: 32rpx;
+  bottom: 160rpx;
+  z-index: 99;
+  
+  .button-wrapper {
+    width: 88rpx;
+    height: 88rpx;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    
+    &:active {
+      transform: scale(0.95);
+      box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+    }
   }
 }
 

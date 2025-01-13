@@ -117,7 +117,7 @@
 		data() {
 			return {
 				// pic:config.baseUrl+uni.getStorageSync('lifeData').vuex_user.user.avatar,
-				pic:'https://sourcebyte.cn/profile/avatar/2021/04/27/2c7c5a9c6934323f5247c6fd4c0bdbc4.png',
+				pic:'http://127.0.0.1/profile/avatar/2021/04/27/2c7c5a9c6934323f5247c6fd4c0bdbc4.png',
 				show:true,
 				navList:[
 				   {name:"优惠卷",icon:"coupon",url:"/pages/detail/preHouse"},

@@ -1,6 +1,6 @@
 {
-    "name" : "房产",
-    "appid" : "__UNI__1443B25",
+    "name" : "省心租房",
+    "appid" : "__UNI__G45383B9",
     "description" : "",
     "versionName" : "1.0.1",
     "versionCode" : 1,
@@ -118,6 +118,9 @@
             "base" : "/house/"
         },
         "title" : "省心租房",
-        "domain" : "8.136.213.245"
+        "domain" : "106.52.209.18",
+        "devServer" : {
+            "https" : false
+        }
     }
 }
