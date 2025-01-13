@@ -92,7 +92,7 @@
             <view class="traffic-info">
                 <view class="traffic-map">
                     <image 
-                        src="http://api.map.baidu.com/staticimage/v2?ak=CB9b776692623d30a148b5c5dc2b75a6&mcode=666666&center=120.213023,30.300046&width=800&height=360&zoom=18&markers=120.213023,30.300046&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,23,25"
+                        src="/static/img/detail-map.jpg"
                         mode="aspectFill"
                         class="map-image"
                     ></image>
