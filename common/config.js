@@ -1,5 +1,5 @@
 // 全局配置文件
-let baseUrl = 'http://192.168.0.106:8088';
+let baseUrl = 'http://127.0.0.1:8088';
 // let baseUrl = 'http://127.0.0.1';
 // 版本号 用于更新
 let version = 1;

@@ -135,6 +135,8 @@
 </template>
 
 <script>
+import { villageList } from '@/mock/villageInfo.js'
+
 export default {
 	data() {
 		let that = this;
@@ -245,19 +247,14 @@ export default {
 			this.model.payType = this.actionSheetList[index].text;
 		},
 		findVillageList() {
-			let url = "/api/houseApi/findVillageList";
-			this.$u.get(url).then(result => {
-				const data = result.rows
-				for (let i = 0; i < data.length; i++) {
-				    // 先转成字符串再转成对象，避免数组对象引用导致数据混乱
-				    let item = data[i]
-					this.selectList.push({
-						label: item.name,
-						value: item.id
-					})
-				}
-				return data
-			});
+			// 模拟异步请求
+			setTimeout(() => {
+				const data = villageList.rows
+				this.selectList = data.map(item => ({
+					label: item.name,
+					value: item.id
+				}))
+			}, 500)
 		},
 	}
 };
